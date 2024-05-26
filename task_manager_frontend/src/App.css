@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle, #7c7878 0%, #0c0022 80%, #18003c 100%);
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(30, 29, 29, 0.1);
 }
 
-.App-link {
+h1 {
+  text-align: center;
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+textarea,
+select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #3c92a6; /* Changed from blue to green */
+  border-radius: 4px;
+  background: transparent;
+  color: #ffffff;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: #ccc;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
+
+.select-filter,
+select {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #333; /* Changed from transparent to darker shade */
+  border: 2px solid #4c91af; /* Changed to green */
+  color: #ffffff;
+}
+
+.task-list {
+  margin-top: 20px;
+}
+
+.task {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #20232a;
+  border-left: 5px solid #61dafb;
+  border-radius: 5px;
+}
+
+.task h3 {
+  margin: 0;
+}
+
+.task p {
+  margin: 5px 0;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.filter-dropdown {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #333; /* Changed from transparent to darker shade */
+  border: 2px solid #4c95af; /* Changed to green */
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.filter-dropdown option {
+  background: #282c34;
 }
