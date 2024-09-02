@@ -1,0 +1,67 @@
+<html>
+    <style>
+        .container {
+            background-color: red;
+            font-size: 20;
+            padding: 20;
+            margin: 50;
+            color: greenyellow
+        }
+        #container1 {
+            background-color: skyblue;
+            font-size: 20;
+            padding: 20;
+            margin: 50;
+            color: violet
+        }
+    </style>
+    <script>
+        function populateDiv() {
+            const element = document.getElementById("finalSum");
+            console.log(element);
+            let a = document.getElementById("first-number").value;
+            let b = document.getElementById("second-number").value;
+            let backendPath = "https://sum-server.100xdevs.com/sum?a="+a+"&b="+b;
+            // fetch(backendPath).then(function(response){
+            //     console.log("response is ",response);
+            //     response.text().then(function(ans){
+            //         console.log("ans is ",ans);
+
+            //     })
+            // }) 
+            // the above is one way to integrate backend from frontend
+             element.innerHTML = parseInt(a) + parseFloat(b);
+        }
+        async function populateDiv2(){ // another cleaner syntax for integrating backend
+            const element = document.getElementById("finalSum");
+            console.log(element);
+            let a = document.getElementById("first-number").value;
+            let b = document.getElementById("second-number").value;
+            let backendPath = "https://sum-server.100xdevs.com/sum?a="+a+"&b="+b;
+            const response = await fetch(backendPath);
+            const ans = await response.text();
+            element.innerHTML = ans;
+
+        }
+        </script>
+    <body>
+        <input type="text" placeholder="First number" id="first-number" ></input>
+        <br></br>
+        <input type="text" placeholder="Second number" id="second-number"></input>
+        <br></br>
+        <button onclick="populateDiv()"> Calculate Sum</button>  
+        <!-- also see oninput function -->
+        <br></br>
+        <div id="finalSum">The final sum is </div> 
+        <div class="container">
+            hi there 
+            </div>
+
+        <div class="container">
+            Cheeks Please
+            </div>
+        <div id="container1">
+            Monkey Please
+        </div>
+        </body>
+    </html>
